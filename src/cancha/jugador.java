@@ -1,11 +1,10 @@
 package cancha;
 
-import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class jugador {
+
     private int posX;
     private int posY;
     private double posZ;
@@ -15,11 +14,12 @@ public class jugador {
     private int equipo;
 
     public jugador() {
-        this.Potencia = 0;
-        this.Velocidad = 0;
-        this.Salto = 0;
-        this.Precision = 0;
-        this.Resistencia = 0;
+        Random r = new Random();
+        this.Potencia = r.nextInt(100);
+        this.Velocidad = r.nextInt(100);
+        this.Salto = r.nextInt(100);
+        this.Precision = r.nextInt(100);
+        this.Resistencia = r.nextInt(100);
         this.posX = 0;
         this.posY = 0;
         this.posZ = 0;
@@ -38,6 +38,21 @@ public class jugador {
         this.funcion = funcion;
         this.saque = saque;
         this.equipo = equipo;
+    }
+
+    /**
+     *
+     * @return los atributos en forma de array.
+     */
+    public int[] obtenerAtributos() {
+        int[] atributos = {
+            Potencia,
+            Precision,
+            Resistencia,
+            Salto,
+            Velocidad
+        };
+        return atributos;
     }
 
     public void setPosX(int posX) {
@@ -118,27 +133,27 @@ public class jugador {
 
     public void setSaque(int saque) {
         this.saque = saque;
-    } 
-    
-    public void HacerSaque(Main m){
+    }
+
+    public void HacerSaque(Main m) {
         int x = 0;
         int y = 0;
-        if(this.equipo == 1){
+        if (this.equipo == 1) {
             x = 2;
             y = 17;
-        }else{
+        } else {
             x = 30;
             y = 5;
         }
         m.log[this.posX][this.posY] = 0;
         m.log[x][y] = this.equipo;
-        
+
         ImageIcon piso = new ImageIcon("piso.gif");
         m.lbl[this.posX][this.posY].setIcon(piso);
         ImageIcon icon;
-        if(this.equipo == 1){
-            icon = new ImageIcon("jugador1.png");            
-        }else{
+        if (this.equipo == 1) {
+            icon = new ImageIcon("jugador1.png");
+        } else {
             icon = new ImageIcon("jugador2.png");
         }
         m.lbl[x][y].setIcon(icon);
