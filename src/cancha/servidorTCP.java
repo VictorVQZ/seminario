@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class servidorTCP extends Thread {
 
     ArrayList<Socket> clientes;
@@ -14,18 +13,19 @@ public class servidorTCP extends Thread {
     ObjectOutputStream output;
     Socket Servicio;
     ServerSocket Puerto;
+    int cont;
 
     public servidorTCP() throws IOException {
         this.Puerto = new ServerSocket(5001);
         this.clientes = new ArrayList<Socket>();
-        this.input = new  ObjectInputStream(Servicio.getInputStream());
-        this.output = new ObjectOutputStream(Servicio.getOutputStream());
+        this.cont = 0;
     }
 
     public void Conexion() {
         try {
             Servicio = Puerto.accept();
             clientes.add(Servicio);
+            cont++;
         } catch (IOException ex) {
             Logger.getLogger(servidorTCP.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -34,21 +34,30 @@ public class servidorTCP extends Thread {
     public void IniHilo() {
         start();
     }
-    
+
     @Override
     public void run() {
-        while (true) {
+        while (cont <= 2) {
             Conexion();
-            System.out.println("Servidor Listo...");
-            if(clientes.size()==2){
-                stop();
-            }
+            System.out.println("Servidor " + cont + " Listo");
+        }
+
+    }
+
+    public void recibir() {
+        try {
+            input = new ObjectInputStream(Servicio.getInputStream());
+
+        } catch (IOException ex) {
+            Logger.getLogger(servidorTCP.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    Thread hilo1 = new Thread();  
-    
-    public void data_recibido(){
-        hilo1.start();
- 
+
+    public void enviar() {
+        try {
+            output = new ObjectOutputStream(Servicio.getOutputStream());
+        } catch (IOException ex) {
+            Logger.getLogger(servidorTCP.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

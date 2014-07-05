@@ -1,17 +1,13 @@
 package cancha;
 
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.*;
 import java.io.IOException;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.event.*;
+import java.awt.geom.Ellipse2D;
+import java.util.Random;
+import javax.swing.*;
 
 /**
  *
@@ -83,23 +79,23 @@ public class Main {
         log[27][11] = 2;
         Equipo2[4] = new jugador(27, 11, 0, 0, 0, 0, 0, 0, "Armador", 0, 2);
         log[27][17] = 2;
-        Equipo2[5] = new jugador(27, 17, 0, 0, 0, 0, 0, 0, "Defensa", 0, 2);
+        Equipo2[5] = new jugador(27, 17, 0, 0, 0, 0, 0, 0, "Defensa", 0, 2);        
 
         for (i = 2; i < 3; i++) {
             for (j = 3; j < col; j++) {
                 lbl[i][j] = new JLabel();
                 lbl[i][j].setBounds(i * 30, j * 30, 32, 31);
                 f.add(lbl[i][j]);
-            }
+            }            
         }
         for (i = 30; i < 31; i++) {
             for (j = 3; j < col; j++) {
                 lbl[i][j] = new JLabel();
                 lbl[i][j].setBounds(i * 30, j * 30, 32, 31);
                 f.add(lbl[i][j]);
-            }
+            }            
         }
-        for (i = 3; i < fil - 1; i++) {
+        for (i = 3; i < fil-1; i++) {
             for (j = 3; j < col; j++) {
                 lbl[i][j] = new JLabel(piso);
                 lbl[i][j].setBounds(i * 30, j * 30, 32, 31);     /////inicializar matriz label
@@ -131,7 +127,7 @@ public class Main {
         Random rand = new Random();
         // nextInt is normally exclusive of the top value,
         // so add 1 to make it inclusive
-        int randomNum = 1 + (int) (Math.random() * ((2 - 1) + 1));
+        int randomNum = 1 + (int)(Math.random() * ((2 - 1) + 1));
         System.out.println(randomNum);
         jugador j = Servicio(randomNum);
         j.HacerSaque(this);
@@ -164,10 +160,7 @@ public class Main {
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        /*         = Main obj = new Main();
-         servidorTCP conn = new servidorTCP();
-         obj.Pintar_Cancha();*/
+        
     }
 
 }
