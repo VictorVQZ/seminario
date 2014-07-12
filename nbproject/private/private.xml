@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/KatherinC/Documents/Cancha/src/cancha/servidorTCP.java</file>
-            <file>file:/C:/Users/KatherinC/Documents/Cancha/src/Cliente1/clienteTCP.java</file>
-            <file>file:/C:/Users/KatherinC/Documents/Cancha/src/cancha/Main.java</file>
-            <file>file:/C:/Users/KatherinC/Documents/Cancha/src/Cliente1/cliente.java</file>
+            <file>file:/C:/Users/KatherinC/Documents/NetBeansProjects/seminario/src/cancha/jugador.java</file>
+            <file>file:/C:/Users/KatherinC/Documents/NetBeansProjects/seminario/src/cancha/Main.java</file>
+            <file>file:/C:/Users/KatherinC/Documents/NetBeansProjects/seminario/src/cancha/cliente.java</file>
+            <file>file:/C:/Users/KatherinC/Documents/NetBeansProjects/seminario/src/cancha/ConexionCliente.java</file>
+            <file>file:/C:/Users/KatherinC/Documents/NetBeansProjects/seminario/src/cancha/ConexionServidor.java</file>
+            <file>file:/C:/Users/KatherinC/Documents/NetBeansProjects/seminario/src/cancha/equipo.java</file>
         </group>
     </open-files>
 </project-private>
