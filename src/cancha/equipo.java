@@ -5,13 +5,14 @@
  */
 package cancha;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author KatherinC
  */
-public class equipo {
+public class equipo implements Serializable{
 
     int turno; //0 juego sin empezar, 1 juego iniciado turno jugador 1, 2 juego iniciado turno jugador 2, 3 Juego terminado
     String equipo; //Equipo que pertenece el mensaje 
@@ -20,7 +21,7 @@ public class equipo {
 
     public equipo() {
         this.turno = 0;
-        this.equipo = "";
+        this.equipo = "aqui va algo";
         this.puntuacion = 0;
         this.jugador = new ArrayList<jugador>();
     }

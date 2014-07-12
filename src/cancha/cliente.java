@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 
-package Cliente1;
-
+package cancha;
 import java.io.IOException;
 
 
@@ -17,8 +16,8 @@ public class cliente {
 
 
     public static void main(String[] args) throws IOException {
-        clienteTCP conn = new clienteTCP();
-        conn.conectar();
+      ConexionCliente Conn = new ConexionCliente(20080);
+      Conn.start();
       
     }
     

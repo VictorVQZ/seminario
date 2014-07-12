@@ -1,14 +1,15 @@
 package cancha;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class jugador {
-    private int posX;
-    private int posY;
-    private double posZ;
+public class jugador implements Serializable{
+    protected int posX;
+    protected int posY;
+    protected double posZ;
     private int Potencia, Velocidad, Salto, Precision, Resistencia;
     private String funcion;
     private int saque;
@@ -24,6 +25,10 @@ public class jugador {
         this.posY = 0;
         this.posZ = 0;
         this.equipo = 0;
+        this.funcion = "Descripcion del jugador";
+        this.saque = 1;
+        this.equipo = 1;
+        
     }
 
     public jugador(int posX, int posY, double posZ, int Potencia, int Velocidad, int Salto, int Precision, int Resistencia, String funcion, int saque, int equipo) {

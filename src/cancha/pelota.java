@@ -6,11 +6,13 @@
 
 package cancha;
 
+import java.io.Serializable;
+
 /**
  *
  * @author KatherinC
  */
-public class pelota {
+public class pelota implements Serializable{
     public Integer xIniPelota,yIniPelota,zIniPelota,xFinPelota,yFinPelota,zFinPelota;
     public double vx, vy, angPelota;
 
@@ -32,62 +34,6 @@ public class pelota {
         this.yFinPelota = 0;
         this.zFinPelota = 0;
         this.angPelota = 0;
-    }
-
-    public Integer getxIniPelota() {
-        return xIniPelota;
-    }
-
-    public Integer getyIniPelota() {
-        return yIniPelota;
-    }
-
-    public Integer getzIniPelota() {
-        return zIniPelota;
-    }
-
-    public Integer getxFinPelota() {
-        return xFinPelota;
-    }
-
-    public Integer getyFinPelota() {
-        return yFinPelota;
-    }
-
-    public Integer getzFinPelota() {
-        return zFinPelota;
-    }
-
-    public double getAngPelota() {
-        return angPelota;
-    }
- 
-    public void setxIniPelota(Integer xIniPelota) {
-        this.xIniPelota = xIniPelota;
-    }
-
-    public void setyIniPelota(Integer yIniPelota) {
-        this.yIniPelota = yIniPelota;
-    }
-
-    public void setzIniPelota(Integer zIniPelota) {
-        this.zIniPelota = zIniPelota;
-    }
-
-    public void setxFinPelota(Integer xFinPelota) {
-        this.xFinPelota = xFinPelota;
-    }
-
-    public void setyFinPelota(Integer yFinPelota) {
-        this.yFinPelota = yFinPelota;
-    }
-
-    public void setzFinPelota(Integer zFinPelota) {
-        this.zFinPelota = zFinPelota;
-    }
-
-    public void setAngPelota(double angPelota) {
-        this.angPelota = angPelota;
     }
     
 }

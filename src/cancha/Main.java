@@ -149,17 +149,12 @@ public class Main {
         }
         return j;
     }
-
     public static void main(String[] args) {
 
-        try {
-            Main obj = new Main();
-            servidorTCP conn = new servidorTCP();
-            obj.Pintar_Cancha();
-            conn.IniHilo();
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Main obj = new Main();
+        obj.Pintar_Cancha();
+        ConexionServidor Conn = new ConexionServidor(20080);
+        Conn.start();
         
     }
 

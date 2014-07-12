@@ -57,13 +57,14 @@ public class Antidoping {
      */
     private static final void modificarAtributos(final jugador j) {
         assert j != null;
-        int[] normalizado = normalizar(j.obtenerAtributos(), sumarAtributos(j));
+        /*int[] normalizado = normalizar(j.obtenerAtributos(), sumarAtributos(j));
         j.setPotencia(normalizado[0]);
         j.setPrecision(normalizado[1]);
         j.setResistencia(normalizado[2]);
         j.setSalto(normalizado[3]);
         j.setVelocidad(normalizado[4]);
-    }
+         */
+                }
 
     private static final int[] normalizar(int[] atributos, double total) {
 
